@@ -1,3 +1,4 @@
+const ESC_CODE = 27;
 class ImageInfo {
   $imageInfo = null;
   data = null;
@@ -35,8 +36,23 @@ class ImageInfo {
           </div>
         </div>`;
       this.$imageInfo.style.display = "block";
+      this.setEvent();
     } else {
       this.$imageInfo.style.display = "none";
     }
+  }
+
+  setEvent() {
+    document.addEventListener('click', (e) => {
+      if(e.target === document.querySelector('.ImageInfo') || e.target === document.querySelector('.close')) {
+        this.$imageInfo.style.display = "none";
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if(e.keyCode === ESC_CODE) {
+        this.$imageInfo.style.display = "none";
+      }
+    })
   }
 }

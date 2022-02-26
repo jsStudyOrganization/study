@@ -12,12 +12,16 @@ class Header {
     this.$headerElement.appendChild(this.$checkboxElement);
 
     this.render();
+    this.setEvent();
   }
 
   setState() {
   }
 
   render() {
+  }
+
+  setEvent() {
     this.$checkboxElement.addEventListener('click', () => {
       const theme = window.matchMedia("(prefers-color-scheme: dark)").matches;
 

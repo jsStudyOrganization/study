@@ -1,5 +1,5 @@
 const TEMPLATE = '<input type="text">';
-
+const ENTER_CODE = 13;
 class SearchInput {
   constructor({ $target, onSearch }) {
     const $searchInput = document.createElement("input");
@@ -8,14 +8,16 @@ class SearchInput {
 
     $searchInput.className = "SearchInput";
     $target.appendChild($searchInput);
-
-    $searchInput.addEventListener("keyup", e => {
-      if (e.keyCode === 13) {
-        onSearch(e.target.value);
-      }
-    });
+    this.setEvent(onSearch);
 
     console.log("SearchInput created.", this);
   }
   render() {}
+  setEvent(onSearch) {
+    this.$searchInput.addEventListener("keyup", e => {
+      if (e.keyCode === ENTER_CODE) {
+        onSearch(e.target.value);
+      }
+    });
+  }
 }

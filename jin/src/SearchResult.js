@@ -30,6 +30,10 @@ class SearchResult {
       )
       .join("");
 
+      this.setEvent();
+  }
+
+  setEvent() {
     this.$searchResult.querySelectorAll(".item").forEach(($item, index) => {
       $item.addEventListener("click", () => {
         this.onClick(this.data[index]);
