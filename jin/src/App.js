@@ -7,6 +7,10 @@ class App {
   constructor($target) {
     this.$target = $target;
 
+    this.header = new Header({
+      $target
+    });
+
     this.searchInput = new SearchInput({
       $target,
       onSearch: keyword => {

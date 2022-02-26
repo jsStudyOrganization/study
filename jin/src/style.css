@@ -109,11 +109,47 @@ ul {
   }
 }
 
-/* dark mode 처리
+.dark {
+  background-color: #000;
+  color: #fff;
+}
+
+.light {
+  background-color: #fff;
+  color: #000;
+}
+
+body.dark .ImageInfo .content-wrapper {
+  background-color: #000;
+  color: #fff;
+}
+
+body.light .ImageInfo .content-wrapper {
+  background-color: #fff;
+  color: #000;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #000;
-    color: white;
+    color: #fff;
+  }
+
+  .ImageInfo .content-wrapper {
+    background-color: #000;
+    color: #fff;
   }
 }
-*?
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #fff;
+    color: #000;
+  }
+
+  .ImageInfo .content-wrapper {
+    background-color: #fff;
+    color: #000;
+  }
+}
+
