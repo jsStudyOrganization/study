@@ -25,13 +25,13 @@ class ImageInfo {
       this.$imageInfo.innerHTML = `
         <div class="content-wrapper">
           <div class="title">
-            <span>${name}</span>
-            <div class="close">x</div>
+            <strong>${name}</strong>
+            <button type="button" class="close" aria-label="닫기">x</button>
           </div>
           <img src="${url}" alt="${name}"/>
           <div class="description">
-            <div>성격: ${temperament}</div>
-            <div>태생: ${origin}</div>
+            <span>성격: ${temperament}</span>
+            <span>태생: ${origin}</span>
           </div>
         </div>`;
       this.$imageInfo.style.display = "block";
