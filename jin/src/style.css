@@ -153,3 +153,8 @@ body.light .ImageInfo .content-wrapper {
   }
 }
 
+@media (max-width: 768px) {
+  .ImageInfo .content-wrapper {
+    width: 100%;
+  }
+}
